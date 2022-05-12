@@ -37,6 +37,13 @@ en: &DEFAULT_EN
     section: portfolio
     closebutton: "Close Project"
 
+  video:
+    title: "Sermon"
+    text: "Sunday sermon youtube Video"
+    section: video
+    id: zVeLAe6NtIM
+    provider: youtube
+
   timeline:
     title: "Timeline"
     text: "Lorem ipsum timeline"

@@ -1,0 +1,41 @@
+<section class="page-section" id="{{ site.data.sitetext[site.locale].video.section | default: "video" }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading text-uppercase">{{ site.data.sitetext[site.locale].video.title }}</h2>
+				<h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].video.text }}</h3>
+			</div>
+		</div>
+		<div class="row">
+      <div class="col-lg-6 mx-auto text-center">
+        {% capture video_id %}{{ site.data.sitetext[site.locale].video.id }}{% endcapture %}
+        {% capture video_provider %}{{ site.data.sitetext[site.locale].video.provider }}{% endcapture %}
+        {% capture video_danmaku %}{{ site.data.sitetext[site.locale].video.danmaku | default: 0 }}{% endcapture %}
+        {% capture video_src %}
+          {% case video_provider %}
+          {% when "vimeo" %}
+            https://player.vimeo.com/video/{{ video_id }}?dnt=true
+          {% when "youtube" %}
+            https://www.youtube-nocookie.com/embed/{{ video_id }}
+          {% when "google-drive" %}
+            https://drive.google.com/file/d/{{ video_id }}/preview
+          {% when "bilibili" %}
+            https://player.bilibili.com/player.html?bvid={{ video_id }}&page=1&as_wide=1&high_quality=1&danmaku={{ video_danmaku }}
+          {% endcase %}
+        {% endcapture %}
+        {% assign video_src = video_src | strip %}
+        <!-- Courtesy of embedresponsively.com -->
+        {% unless video_src == "" %}
+        {% endunless %}
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="{{ video_src }}" allowfullscreen></iframe>
+        </div>
+      </div>
+		</div>
+		<!-- <div class="row">
+			<div class="col-lg-8 mx-auto text-center">
+				<div class="large text-muted">{{ site.data.sitetext[site.locale].team.subtext | markdownify }}</div>
+			</div>
+		</div> -->
+	</div>
+</section>
