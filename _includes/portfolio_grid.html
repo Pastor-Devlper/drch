@@ -8,8 +8,8 @@
       </div>
     </div>
     <div class="d-flex aline-item-center overflow-auto scrollbar">
-	{% for project in site.portfolio %}
-      <div class="col-lg-3 col-md-4 col-sm-6 col-6 portfolio-item">
+	{% for project in site.portfolio offset:0 limit:6  %}
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
         <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}" data-video="{{ project.caption.video }}">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
@@ -28,8 +28,6 @@
       <div class="col-lg-12 mt-3 text-center">
         <span class="icons">
           <i class="fas fa-angle-left fa-2x"></i>
-          <i class="fas fa-ellipsis-h fa-2x"></i>
-          <i class="fas fa-ellipsis-h fa-2x"></i>
           <i class="fas fa-ellipsis-h fa-2x"></i>
           <i class="fas fa-ellipsis-h fa-2x"></i>
           <i class="fas fa-ellipsis-h fa-2x"></i>
