@@ -37,6 +37,12 @@ en: &DEFAULT_EN
     section: portfolio
     closebutton: "Close Project"
 
+  blog:
+    title: "Blogs"
+    text: "Lorem ipsum dolor sit amet consectetur."
+    section: blog
+    closebutton: "Close post"
+
   video:
     title: "Sermon"
     text: "Sunday sermon youtube Video"

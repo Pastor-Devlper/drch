@@ -1,0 +1,50 @@
+<!-- Blog Modals -->
+{% for post in site.posts %}
+<div class="blog-modal modal fade" id="b{{ forloop.index }}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-left">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container modal-body">
+        <div class="row">
+          <div class="col-lg-12 mx-auto">
+              <!-- Postl Details Go Here -->
+              <h3 class="font-tertiary mb-5">{{ post.title | escape }}</h3>
+              <p class="font-secondary">Published on {{ post.date | date: '%b %d, %Y' }} by <span class="text-primary">{{ post.author }}</span>
+                on {% for tag in post.tags %}<span>{{ tag }} </span>{% endfor %}</p>
+              <div class="content">
+                <img src="{{ post.image }}" class="img-fluid rounded float-left mr-5 mb-4" alt="{{ post.title }}">
+                {{ post.content | markdownify }}
+              </div>
+              <!-- <h2 class="text-uppercase">{{ post.title }}</h2>
+              <p class="item-intro text-muted">{{ post.date }}</p>
+              {% if post.image %}
+                <img class="img-fluid d-block mx-auto" src="{{ post.image }}" alt="{{ post.alt }}"/>
+                {% endif %}
+              {% if post.video %}
+                <!-- <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="{{ post.video }}" allowfullscreen>  
+                  </iframe> -->
+                  <!-- <div class="responsive-video-container">
+                    <iframe src="{{ post.video }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+                  </div>
+                </div>
+              {% endif %}
+              <p>{{ post.content | markdownify }}</p> -->
+              <button class="btn btn-primary" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                {{ site.data.sitetext[site.locale].blog.closebutton |
+                default: "Close post" }}
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<!-- End Blog Modals -->
