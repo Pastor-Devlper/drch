@@ -13,8 +13,8 @@
 
 theme: jekyll-agency
 
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://pastor-devlper.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/drch_site/" # the subpath of your site, e.g. /blog
 
 title: Dream Church
 email: ct1799@hanmail.net #this is also the email contact forms will go to
