@@ -9,32 +9,21 @@
     </div>
     <div class="d-flex aline-item-center overflow-auto scrollbar">
 	{% for post in site.posts offset:0 limit:6  %}
-      <!-- <div class="col-lg-3 col-md-4 col-sm-6 blog-item">
-        <a class="blog-link" data-toggle="modal" href="#b{{ forloop.index }}" data-video="{{ post.video }}">
-          <div class="blog-hover">
-            <div class="blog-hover-content">
-              <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
-            </div>
-          </div>
-          <img class="img-fluid" src="{{ post.image }}" alt="">
-        </a>
-        <div class="blog-caption">
-          <h4>{{ post.title }}</h4>
-          <p class="text-muted">{{ post.date }}</p>
-        </div>
-      </div> -->
-
-      <div class="col-lg-4 col-sm-6 mb-4 blog-item">
-        <article class="card-lg shadow blog-link" data-toggle="modal" href="#b{{ forloop.index }}">
+      <!-- Kross Jekyll theme Blog Card -->
+      <div class="col-lg-4 col-sm-6 col-12 mb-4">
+        <article class="card shadow">
           <img class="rounded card-img-top" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
           <div class="card-body">
             <h4 class="card-title">
-              <a class="text-dark" href="#b{{ forloop.index }}">{{ post.title }}</a>
+              <a class="text-dark" data-toggle="modal" href="#b{{ forloop.index }}">{{ post.title }}</a>
             </h4>
-            <p class="card-text">{% assign curlyend = '}' %}{{ post.excerpt | markdownify | strip_html | replace: "{% include JB/setup %", "" | replace: curlyend, "" | truncatewords: 30 }}</p>
-            <a href="#b{{ forloop.index }}" class="btn btn-xs btn-primary">Read More</a>
+            <p class="card-text">
+              {% assign curlyend = '}' %}
+              {{ post.excerpt | markdownify | strip_html | truncatewords: 30 }}
+            </p>
+            <a data-toggle="modal" href="#b{{ forloop.index }}" class="btn btn-xs btn-primary">Read More</a>
           </div>
-        </article>
+        </articl>
       </div>
 	{% endfor %}
     </div>

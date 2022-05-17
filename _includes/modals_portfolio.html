@@ -1,12 +1,6 @@
 <!-- Portfolio Modals -->
 {% for project in site.portfolio %}
-<div
-  class="portfolio-modal modal fade"
-  id="p{{ forloop.index }}"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true"
->
+<div class="portfolio-modal modal fade" id="p{{ forloop.index }}" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="close-modal" data-dismiss="modal">
@@ -23,30 +17,18 @@
               <h2 class="text-uppercase">{{ project.title }}</h2>
               <p class="item-intro text-muted">{{ project.subtitle }}</p>
               {% if project.image %}
-                <img
-                  class="img-fluid d-block mx-auto"
-                  src="{{ project.image }}"
-                  alt="{{ project.alt }}"
-                />
+                <img class="img-fluid d-block mx-auto" src="{{ project.image }}" alt="{{ project.alt }}"/>
                 {% endif %}
               {% if project.video %}
-                <!-- <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src="{{ project.video }}" allowfullscreen>  
-                  </iframe> -->
                   <div class="responsive-video-container">
                     <iframe src="{{ project.video }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
                   </div>
                 </div>
               {% endif %}
               <p>{{ project.content }}</p>
-              <button
-                class="btn btn-primary"
-                data-dismiss="modal"
-                type="button"
-              >
+              <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
-                {{ site.data.sitetext[site.locale].portfolio.closebutton |
-                default: "Close Project" }}
+                {{ site.data.sitetext[site.locale].portfolio.closebutton | default: "Close Project" }}
               </button>
             </div>
           </div>
