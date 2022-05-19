@@ -1,0 +1,14 @@
+.scrollup {
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    padding: 5px 15px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4px;
+    display: none;
+    &:hover, &:active, &:focus {
+        color: #fff;
+        background-color: rgba(0,0,0,0.15);
+        }
+}

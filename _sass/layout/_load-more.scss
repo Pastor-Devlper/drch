@@ -1,0 +1,25 @@
+.themes {
+    display: none;
+/* 	max-width: 400px; */
+}
+#totop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+#totop {
+    display: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+.js-data-loadmore {
+    display: none;
+}
+.loadmore {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    cursor: pointer;
+}
